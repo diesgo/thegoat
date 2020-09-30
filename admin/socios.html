@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CCSM | Socios</title>
+    <link rel="stylesheet" href="../css/w3.css">
+    <link rel="stylesheet" href="../css/w3-theme-blue-grey.css">
+    <link rel="stylesheet" href="../fontawesome5/css/all.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body class="w3-theme-light">
+
+    <!-- Top container -->
+
+    <div class="w3-bar w3-top w3-theme w3-large" style="z-index:4; padding: 2px 32px">
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-theme" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
+        <a class="w3-bat-item w3-button w3-round w3-theme-dark w3-hover-theme" href="../home.php">TPV</a>
+        <span class="w3-bar-item w3-right"><img class="w3-image" src="../img/logo_negro.png" alt="logo" style="max-width:24px"></span>
+    </div>
+
+    <!-- Sidebar/menu -->
+
+    <nav class="w3-sidebar w3-collapse" style="z-index:3;width:300px;" id="mySidebar"><br>
+    
+        <div class="w3-container w3-row">
+            <div class="w3-col s4">
+                <img src="../img/admin/avatar1.png" class="w3-circle w3-margin-right" style="width:46px">
+            </div>
+            <div class="w3-col s8 w3-bar">
+                <span>Welcome, <strong>Mike</strong></span><br>
+                <a href="#" class="w3-bar-item w3-button w3-text-theme w3-hover-theme"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="w3-bar-item w3-button w3-text-theme w3-hover-theme"><i class="fa fa-user"></i></a>
+                <a href="#" class="w3-bar-item w3-button w3-text-theme w3-hover-theme"><i class="fa fa-cog"></i></a>
+            </div>
+        </div>
+    
+        <div class="w3-container w3-theme-l2">
+            <h5>Dashboard</h5>
+        </div>
+    
+        <div class="w3-bar-block w3-theme-">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
+            <a href="index.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"> <i class="fas fa-tachometer-alt"></i> Home</a>
+            <div class="w3-dropdown-click">
+                <button onclick="dropdown('catalogDrop')" class="w3-button w3-theme-l1 w3-hover-theme"> Catalog<i class="w3-right fas fa-caret-down"></i></button>
+                <div id="catalogDrop" class="w3-dropdown-content w3-bar-block w3-theme-l2">
+                    <a href="products.html" class="w3-bar-item w3-button w3-hover-theme">Products</a>
+                    <a href="categories.html" class="w3-bar-item w3-button w3-hover-theme">Category</a>
+                </div>
+            </div>
+            <a href="socios.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-users a-fw"></i> Socios</a>
+            <a href="statics.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas a-chart-line"></i></i> Statistics</a>
+            <a href="orders.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-gem"></i> Orders</a>
+            <a href="news.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-bell fa-fw"></i> News</a>
+            <a href="general.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-university"></i> General</a>
+            <a href="history.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-history fa-fw"></i> History</a>
+            <a href="setings.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-cog fa-fw"></i> Settings</a><br><br>
+        </div>
+    </nav>
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    
+    <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+    
+    <div class="w3-main" style="margin-left:300px;margin-top:43px;">
+
+        <!-- Header -->
+
+        <div class="w3-container w3-padding-32 w3-light-grey">
+            <div class="w3-half">
+                <h2><b><i class="fa fa-dashboard"></i>Socios</b></h2>
+            </div>
+            <div class="w3-half">
+                <a class="w3-right w3-button w3-theme-dark w3-round w3-hover-none w3-hover-theme-dark"  href="newproduct.html">+ New socios</a>
+            </div>
+            <hr>
+        </div>
+
+        <!-- !PAGE CONTENT! -->
+
+        <div class="w3-container w3-padding-64 w3-responsive">
+            <table class="w3-table w3-striped w3-bordered w3-centered" style="color: #555">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Last name</th>
+                        <th>Gender</th>
+                        <th>Registration day</th>
+                        <th>sales</th>
+                        <th>Estate</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">0
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 5%"><img class="w3-image" src="../img/s/avatar1.png" style="width: 40px"></td>
+                    <td style="width: 15%" class="w3-left-align">John</td>
+                    <td style="width: 15%" class="w3-left-align">Doe</td>
+                    <td style="width: 15%"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%">4 €/gr</td>
+                    <td style="width: 10%">10 €/gr</td>
+                    <td style="width: 10%"><label class="switch"><input class="sb"  id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width: 10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">1
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar2.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Enrique</td>
+                    <td style="width: 15%;" class="w3-left-align">Villareal</td>
+                    <td style="width: 10%;"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">2
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar3.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Stevie</td>
+                    <td style="width: 15%;" class="w3-left-align">Ray Vaughan</td>
+                    <td style="width: 15%"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%;">5 €/gr</td>
+                    <td style="width: 10%;">15 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i>Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">3
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar4.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Janis</td>
+                    <td style="width: 15%;" class="w3-left-align">Joplin</td>
+                    <td style="width: 10%;"><i class="fas fa-venus w3-xlarge w3-text-pink"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">4
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar5.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Bibiana</td>
+                    <td style="width: 15%;" class="w3-left-align">Fernandez</td>
+                    <td style="width: 10%;"><i class="fas fa-transgender w3-xlarge w3-text-purple"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">5
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar6.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Shania</td>
+                    <td style="width: 15%;" class="w3-left-align">Twain</td>
+                    <td style="width: 10%;"><i class="fas fa-venus w3-xlarge w3-text-pink"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i>Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">6
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar7.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Nico</td>
+                    <td style="width: 15%;" class="w3-left-align">McBrain</td>
+                    <td style="width: 15%"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">7
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar8.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Doro</td>
+                    <td style="width: 15%;" class="w3-left-align">Pesch</td>
+                    <td style="width: 10%;"><i class="fas fa-venus w3-xlarge w3-text-pink"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">8
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar9.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Nikki</td>
+                    <td style="width: 15%;" class="w3-left-align">Sixx</td>
+                    <td style="width: 15%"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i>Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">9
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%"><img class="w3-image" src="../img/s/avatar10.png" alt="" style="width: 40px"></td>
+                    <td style="width: 10%" class="w3-left-align">Chus</td>
+                    <td style="width: 10%" class="w3-left-align">Di Fellatio</td>
+                    <td style="width: 10%"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%">3 €/gr</td>
+                    <td style="width: 10%">8 €/gr</td>
+                    <td style="width: 10%"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width: 10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+                <tr>
+                    <td style="width: 5%;">
+                        <label class="checkbox">10
+                            <input type="checkbox">
+                            <span class="check w3-text-theme w3-round"></span>
+                        </label>
+                    </td>
+                    <td style="width: 10%;"><img class="w3-image" src="../img/s/avatar11.png" alt="" style="width: 40px"></td>
+                    <td style="width: 20%;" class="w3-left-align">Alice</td>
+                    <td style="width: 15%;" class="w3-left-align">Cooper</td>
+                    <td style="width: 15%"><i class="fas fa-mars w3-xlarge w3-text-blue"></i></td>
+                    <td style="width: 10%;">3 €/gr</td>
+                    <td style="width: 10%;">8 €/gr</td>
+                    <td style="width: 10%;"><label class="switch"><input id="auto" type="checkbox"><span class="slider round"></span></label></td>
+                    <td style="width:10%"><a class="w3-button w3-hover-text-theme" href=""><i class="w3-xlarge fas fa-pencil-alt"></i> Edit</a></td>
+                </tr>
+            </table>
+        </div>
+        
+        <!-- !End page content! -->
+
+        <!-- Footer -->
+
+        <footer class="w3-container w3-row w3-theme-dark">
+            <div class="w3-quarter w3-center">
+                <p class="w3-large">Powered by <a class="w3-xlarge" href="#" target="_blank">w3.css</a></p>
+            </div>
+            <div class="w3-half w3-center">
+                <p class="w3-large">Designed and developed by <span class="w3-xlarge font-densia">dbold</span> <span
+                        class="copy-left">©</span> copyleft 2020</p>
+            </div>
+            <div class="w3-quarter w3-center">
+        
+            </div>
+        </footer>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
