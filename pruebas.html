@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <link rel="stylesheet" href="css/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/w3.css">
+    <link rel="stylesheet" href="css/w3-theme-blue-grey.css">
+    <link rel="stylesheet" href="fontawesome5/css/all.css">
+</head>
+<style>
+body {
+    background-color: #eff1f2;
+    color: #555;
+    font: 400 12px/1.42857 Open Sans,Helvetica,Arial,sans-serif;
+    direction: ltr;
+    margin: 0;
+}
+
+.bootstrap #login {
+    min-height: 100%;
+    padding-bottom: 45px;
+}
+.bootstrap #login-panel {
+    margin: 0 auto;
+    width: 350px;
+}
+.bootstrap #login-header {
+    color: #6d6d6d;
+    margin-bottom: 30px;
+    padding-top: 40px;
+}
+
+.bootstrap #login-panel .flip-container {
+    -webkit-perspective: 1000px;
+    -webkit-transform-style: preserve-3d;
+    height: 420px;
+    margin-top: 115px;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+.bootstrap #login-panel .back, .bootstrap #login-panel .front {
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: .6s;
+    backface-visibility: hidden;
+    left: 0;
+    padding: 40px;
+    position: absolute;
+    top: 0;
+    transform-style: preserve-3d;
+    transition: .6s;
+    width: 100%;
+    }
+.bootstrap #login-panel #dash_version, .bootstrap #login-panel .message-item-initial .message-item-initial-body, .bootstrap #login-panel .panel, .bootstrap #login-panel .timeline .timeline-item .timeline-caption .timeline-panel, .bootstrap .message-item-initial #login-panel .message-item-initial-body, .bootstrap .timeline .timeline-item .timeline-caption #login-panel .timeline-panel {
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
+    border-radius: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,.3);
+}
+.bootstrap #shop-img {
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    width: 110px;
+    z-index: 1;
+}
+
+</style>
+<body class="bootstrap">
+    <div id="login">
+        <div id="content">
+            <div id="login-panel">
+
+                <div id="login-header">
+                    <h1 class="w3-center">
+                        <img id="logo" src="img/ccms_logo.png" width="123px" alt="PrestaShop" />
+                    </h1>
+                    <div class="w3-center">1.0</div>
+                </div>
+                
+                <div id="shop-img"><img class="w3-image" src="img/logo_negro.png" alt="Club Name" /></div>
+               
+                <div class="flip-container">
+                    <div class="">
+                        <div class="front front_login panel">
+                            <h4 id="shop_name">The Goat</h4>
+                            <form action="admin/index.html" id="login_form" method="post"> 
+                                <div class="form-group">
+                                    <label class="control-label" for="email">Nombre de usuario</label>
+                                    <input name="email" type="email" id="email" class="form-control" value="" autofocus="autofocus" tabindex="1" placeholder="&#128100 username" />
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label" for="passwd">
+                                        Contraseña
+                                    </label>
+                                    <input name="passwd" type="password" id="passwd" class="form-control" value="" tabindex="2" placeholder="&#128273 Contraseña" />
+                                </div>
+                                <div class="form-group">
+                                    <div class="custom-select">
+                                        <label class="control-label" for="rol">
+                                            Seleccione un rol
+                                        </label>
+                                        <select name="rol" id="rol" style="width: 100%;">
+                                            <option value="0"> Entrar como...</option>
+                                            <option value="1"> Administrador</option>
+                                            <option value="2"> Vendedor</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <button id="submit_login" name="submitLogin" type="submit" tabindex="4"
+                                        class="btn btn-primary btn-lg btn-block ladda-button" data-style="slide-up" data-spinner-color="white">
+                                        <span class="ladda-label">
+                                            Iniciar sesión
+                                        </span>
+                                    </button>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+    
+                <div id="login-footer">
+                    <p class="text-center text-muted">
+                        <a href="http://www.prestashop.com/" onclick="return !window.open(this.href);">
+                            &copy; CCSM&#8482; 2020-2020 - All rights reserved
+                        </a>
+                    </p>
+                    <p class="text-center">
+                        <a class="link-social link-twitter _blank w3-text-blue w3-xlarge" href="https://twitter.com" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a class="link-social link-facebook _blank w3-text-indigo w3-xlarge" href="https://www.facebook.com" title="Facebook">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a class="link-social link-github _blank w3-xlarge" href="https://www.prestashop.com/github" title="Github">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+    
+    
+        </div>
+    </div>
+</body>
+</html>

@@ -41,16 +41,42 @@ function openCity(evt, cityName) {
     evt.currentTarget.classList.add("w3-theme-l4");
 }
 
-function myAccFunc() {
-  var x = document.getElementById("demoAcc");
-  if (x.className.indexOf("w3-show") == -1) {
-    x.className += " w3-show";
-    x.previousElementSibling.className += " w3-green";
-  } else { 
-    x.className = x.className.replace(" w3-show", "");
-    x.previousElementSibling.className = 
-    x.previousElementSibling.className.replace(" w3-green", "");
-  }
+function openTab(evt, tabNumber) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" w3-theme-d3", "");
+    }
+    document.getElementById(tabNumber).style.display = "block";
+    evt.currentTarget.className += " w3-theme-d3";
+}
+
+function dropdown(id) {
+    var x = document.getElementById(id);
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+            x.previousElementSibling.className.replace(" w3-green", "");
+    }
+}
+
+function myDropFunc() {
+    var x = document.getElementById("demoDrop");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-green";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+            x.previousElementSibling.className.replace(" w3-green", "");
+    }
 }
 
 // Custom select

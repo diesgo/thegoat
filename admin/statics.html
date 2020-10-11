@@ -15,14 +15,16 @@
     <!-- Top container -->
     
     <div class="w3-bar w3-top w3-theme w3-large" style="z-index:4; padding: 2px 32px">
-        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-theme" onclick="w3_open();"><i class="fa fa-bars"></i> Menu</button>
-        <a class="w3-bat-item w3-button w3-round w3-theme-dark w3-hover-theme" href="../home.php">TPV</a>
-        <span class="w3-bar-item w3-right"><img class="w3-image" src="../img/logo_negro.png" alt="logo" style="max-width:24px"></span>
+        <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-theme" onclick="w3_open();"><i
+                class="fa fa-bars"></i> Menu</button>
+        <a class="w3-bar-item w3-button w3-round-xxlarge w3-theme-d3 w3-hover-theme" href="../home.php">TPV</a>
+        <span class="w3-bar-item w3-right"><img class="w3-image" src="../img/logo_negro.png" alt="logo"
+                style="max-width:24px"></span>
     </div>
     
     <!-- Sidebar/menu -->
     
-    <nav class="w3-sidebar w3-collapse" style="z-index:3;width:300px;" id="mySidebar"><br>
+    <nav class="w3-sidebar w3-collapse w3-theme-d3" style="z-index:3;width:300px;" id="mySidebar"><br>
     
         <div class="w3-container w3-row">
             <div class="w3-col s4">
@@ -30,33 +32,33 @@
             </div>
             <div class="w3-col s8 w3-bar">
                 <span>Welcome, <strong>Mike</strong></span><br>
-                <a href="#" class="w3-bar-item w3-button w3-text-theme w3-hover-theme"><i class="fa fa-envelope"></i></a>
-                <a href="#" class="w3-bar-item w3-button w3-text-theme w3-hover-theme"><i class="fa fa-user"></i></a>
-                <a href="#" class="w3-bar-item w3-button w3-text-theme w3-hover-theme"><i class="fa fa-cog"></i></a>
+                <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-theme-d3 w3-hover-theme"><i class="fa fa-envelope"></i></a>
+                <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-theme-d3 w3-hover-theme"><i class="fa fa-user"></i></a>
+                <a href="#" class="w3-bar-item w3-button w3-round-xxlarge w3-theme-d3 w3-hover-theme"><i class="fa fa-cog"></i></a>
             </div>
         </div>
     
-        <div class="w3-container w3-theme-l2">
+        <div class="w3-container w3-theme">
             <h5>Dashboard</h5>
         </div>
     
-        <div class="w3-bar-block w3-theme-">
-            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
+        <div class="w3-bar-block">
+            <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-theme" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i> Close Menu</a>
             <a href="index.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"> <i class="fas fa-tachometer-alt"></i> Home</a>
-            <div class="w3-dropdown-click">
-                <button onclick="dropdown('catalogDrop')" class="w3-button w3-theme-l1 w3-hover-theme"> Catalog<i class="w3-right fas fa-caret-down"></i></button>
-                <div id="catalogDrop" class="w3-dropdown-content w3-bar-block w3-theme-l2">
-                    <a href="products.html" class="w3-bar-item w3-button w3-hover-theme">Products</a>
-                    <a href="categories.html" class="w3-bar-item w3-button w3-hover-theme">Category</a>
-                </div>
+            <button class="w3-button w3-block w3-left-align w3-theme-l1 w3-hover-theme" onclick="dropAside()">Catálogo <i class="w3-right fa fa-caret-down"></i></button>
+            <div id="demoAcc" class="w3-hide w3-white w3-theme-l2">
+                <a href="products.html" class="w3-bar-item w3-button w3-hover-theme">Productos</a>
+                <a href="categories.html" class="w3-bar-item w3-button w3-hover-theme">Categorias</a>
             </div>
-            <a href="socios.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-users a-fw"></i> Socios</a>
-            <a href="statics.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas a-chart-line"></i></i> Statistics</a>
-            <a href="orders.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-gem"></i> Orders</a>
-            <a href="news.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-bell fa-fw"></i> News</a>
-            <a href="general.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-university"></i> General</a>
-            <a href="history.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-history fa-fw"></i> History</a>
-            <a href="setings.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-cog fa-fw"></i> Settings</a><br><br>
+            <div class="w3-bar-block">
+                <a href="socios.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-users a-fw"></i> Socios</a>
+                <a href="statics.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-chart-line"></i> Statistics</a>
+                <a href="orders.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-gem"></i> Orders</a>
+                <a href="news.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-bell fa-fw"></i> News</a>
+                <a href="general.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fas fa-university"></i> General</a>
+                <a href="history.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-history fa-fw"></i> History</a>
+                <a href="setings.html" class="w3-bar-item w3-button w3-padding w3-theme-l1 w3-hover-theme"><i class="fa fa-cog fa-fw"></i> Settings</a><br><br>
+            </div>
         </div>
     </nav>
 

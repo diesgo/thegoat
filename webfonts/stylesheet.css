@@ -157,20 +157,6 @@ CATAMARAN
     font-style: normal;
 }
 
-/* =============
-CONFORTA-BOLD
-============= */
-
-@font-face {
-    font-family: 'conforta-bold';
-    src: url('conforta-bold/comfortaa-bold.woff2') format('woff2'),
-        url('conforta-bold/comfortaa-bold.woff') format('woff'),
-        url('conforta-bold/comfortaa-bold.ttf') format('truetype'),
-        url('conforta-bold/comfortaa-bold.svg') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /* ========
 CONFORTA
 ======== */
@@ -181,6 +167,20 @@ CONFORTA
         url('conforta/comfortaa-regular.woff') format('woff'),
         url('conforta/comfortaa-regular.ttf') format('truetype'),
         url('conforta/comfortaa-regular.svg#comfortaaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* =============
+CONFORTA-BOLD
+============= */
+
+@font-face {
+    font-family: 'conforta-bold';
+    src: url('conforta-bold/comfortaa-bold.woff2') format('woff2'),
+        url('conforta-bold/comfortaa-bold.woff') format('woff'),
+        url('conforta-bold/comfortaa-bold.ttf') format('truetype'),
+        url('conforta-bold/comfortaa-bold.svg') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -217,17 +217,6 @@ EMBLEM
     font-family: 'emblem';
     src: url('emblem/emblem-webfont.woff2') format('woff2'), 
     url('emblem/emblem-webfont.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
-/*===========
-FAT-WANDALS
-===========*/
-
-@font-face {
-    font-family: 'fat-wandals';
-    src: url('fat-wandals/fatwandals_personal-webfont.woff2') format('woff2'), url('spoken/fatwandals_personal-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -778,17 +767,6 @@ ROBOTO
     font-style: normal;
 }
 
-/* =======
-ROBOFAN
-======= */
-
-@font-face {
-    font-family: 'robofan';
-    src: url('robofan/robofan_symbol.woff2') format('woff2'), url('transformer/robofan_symbol.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-
 /*=====
 SPOKEN
 =====*/
@@ -819,7 +797,7 @@ SWEET LEAF
 ======== */
 
 @font-face {
-    font-family: 'sweetleaf';
+    font-family: 'sweet-leaf';
     src: url('sweetleaf/sweetleaf.eot');
     src: url('sweetleaf/sweetleaf.eot?#iefix') format('embedded-opentype'),
         url('sweetleaf/sweetleaf.woff2') format('woff2'),
@@ -868,12 +846,11 @@ ZANZABAR
 .font-amaranth-bold {font-family: 'amarat-bold', sans-serif}
 .font-arima-madurai {font-family: 'arima-madurai', sans-serif}
 .font-catamaran {font-family: 'catamaran', sans-serif}
-.font-comforta-bold {font-family: 'conforta-bold', sans-serif}
 .font-conforta {font-family: 'conforta', sans-serif}
+.font-comforta-bold {font-family: 'conforta-bold', sans-serif}
 .font-de-valencia {font-family: 'de-valencia', sans-serif}
 .font-densia {font-family: 'densia', sans-serif}
 .font-emblem {font-family: 'emblem', sans-serif}
-.font-fat-wandals {font-family: 'fat-wandals', sans-serif}
 .font-haetten-schweiler {font-family: 'haetten-schweiler', sans-serif}
 .font-lemonada {font-family: 'lemonada', sans-serif}
 .font-lobster {font-family: 'lobster', sans-serif}
@@ -885,10 +862,9 @@ ZANZABAR
 .font-permanent-maker {font-family: 'permanent-maker', sans-serif}
 .font-pompiere {font-family: 'pompiere', sans-serif}
 .font-restu {font-family: 'restu', sans-serif}
-.font-robofan {font-family: 'robofan', sans-serif}
 .font-roboto {font-family: 'roboto', sans-serif}
 .font-spoken {font-family: 'spoken', sans-serif}
-.font-transformer {font-family: 'transformer', sans-serif}
+.font-sweet-leaf{font-family: 'sweet-leaf', sans-serif;}
+.font-transformer{font-family: 'transformer', sans-serif;}
 .font-varela {font-family: 'varela', sans-serif}
 .font-zanzabar {font-family: 'zanzabar', serif}
-.font-sweetleaf{font-family: 'sweetleaf', sans-serif;}
