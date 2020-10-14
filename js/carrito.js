@@ -41,7 +41,7 @@ function actualizador() {
     compraImg = document.createElement("img");
     compraImg.setAttribute("src", carrito.img);
     compraImg.setAttribute("class", "w3-image");
-    compraImg.setAttribute("width", "60px");
+    compraImg.setAttribute("width", "30px");
     document.getElementById(carrito.id).appendChild(compraImg);
     //Agregar Boton "+" a carrito de compras
     compraDes = document.createElement("button");

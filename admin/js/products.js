@@ -1,29 +1,154 @@
-var id_0 = [{ image: "0", name: "Bubblegum", category: "Flowers", quantity: "2500", cost: "4", price: "12" }];
-var id_1 = [{ image: "1", name: "Amnesia", category: "Flowers", quantity: "1300", cost: "3", price: "9" }];
-var id_2 = [{ image: "2", name: "Gelatto", category: "Flowers", quantity: "500", cost: "7", price: "31" }];
-var id_3 = [{ image: "3", name: "Cream Caramel", category: "Extractions", quantity: "1100", cost: "3", price: "9" }];
-var id_4 = [{ image: "4", name: "Lemonrella", category: "Estractions", quantity: "800", cost: "7", price: "21" }];
-var id_5 = [{ image: "5", name: "Zushi", category: "Cali Flowers", quantity: "300", cost: "30", price: "90" }];
-var id_6 = [{ image: "6", name: "Coca cola", category: "Fresh", quantity: "150", cost: "0.45", price: "1" }];
-var id_7 = [{ image: "7", name: "Water", category: "Drinks", quantity: "200", cost: "0.15", price: "1" }];
-var id_8 = [{ image: "8", name: "Crunch", category: "Snack", quantity: "36", cost: "0.45", price: "1" }];
-var id_9 = [{ image: "9", name: "Ligther", category: "Parafernalia", quantity: "60", cost: "0.70", price: "1" }];
-var id_10 = [{ image: "10", name: "Sweets", category: "Snack", quantity: "64", cost: "0.20", price: "1" }];
+var tipoDeVenta =[
+    {
+        id_tipoDeVenta: 0,
+        tipo_de_venta: "gr"
+    },
+    {
+        id_tipoDeVenta: 1,
+        tipo_de_venta: "Ud/s."
+    }
+]
+var categorias = [
+    {
+        id_categoria: 0,
+        imagen_categoria: "0.jpg",
+        nombre_categoria:"Flores",
+        tipo_de_venta: "gr",
+    },
+    {
+        id_categoria: 1,
+        imagen_categoria: "1.jpg",
+        nombre_categoria: "Extractos",
+        tipo_de_venta: "gr",
+    },
+    {
+        id_categoria: 2,
+        imagen_categoria: "2.jpg",
+        nombre_categoria: "Extacciones",
+        tipo_de_venta: "Ud/s.",
+    },
+    {
+        id_categoria: 3,
+        imagen_categoria: "3.jpg",
+        nombre_categoria: "Flores Empaquetadas",
+        tipo_de_venta: "Ud/s.",
+    },
+    {
+        id_categoria: 4,
+        imagen_categoria: "4.jpg",
+        nombre_categoria: "Bebidas",
+        tipo_de_venta: "Ud/s.",
+    },
+    {
+        id_categoria: 5,
+        imagen_categoria: "5.jpg",
+        nombre_categoria: "Snaks",
+        tipo_de_venta: "Ud/s.",
+    }
+]
 
-var productos = [id_0, id_1, id_2, id_3, id_4, id_5, id_6, id_7, id_8, id_9, id_10];
+var flores = [
 
-var catalogo = [
-{id: "0", image: "0", name: "Bubblegum", category: "Flowers", quantity: "2500", cost: "4", price: "12"},
-{id: "1", image: "1", name: "Amnesia", category: "Flowers", quantity: "1300", cost: "3", price: "9"},
-{id: "2", image: "2", name: "Gelatto", category: "Flowers", quantity: "500", cost: "7", price: "31"},
-{id: "3", image: "3", name: "Cream Caramel", category: "Extractions", quantity: "1100", cost: "3", price: "9"},
-{id: "4", image: "4", name: "Lemonrella", category: "Estractions", quantity: "800", cost: "7", price: "21"},
-{id: "5", image: "5", name: "Zushi", category: "Cali Flowers", quantity: "300", cost: "30", price: "90"},
-{id: "6", image: "6", name: "Coca cola", category: "Fresh", quantity: "150", cost: "0.45", price: "1"},
-{id: "7", image: "7", name: "Water", category: "Drinks", quantity: "200", cost: "0.15", price: "1"},
-{id: "8", image: "8", name: "Crunch", category: "Snack", quantity: "36", cost: "0.45", price: "1"},
-{id: "9", image: "9", name: "Ligther", category: "Parafernalia", quantity: "60", cost: "0.70", price: "1"},
-{id: "10", image: "10", name: "Sweets", category: "Snack", quantity: "64", cost: "0.20", price: "1"}];
+    {
+        id_flor: 0,
+        imagen_flor: "0.jpg",
+        nombre_flor: "Bubblegum",
+        variedad: "Indica",
+        cantidad: 2500,
+        precio_coste: 4,
+        precio_venta: 12
+    },
+    {
+        id_flor: 1,
+        imagen_flor: "1.jpg",
+        nombre_flor: "Amnesia",
+        variedad: "Sativa",
+        cantidad: 1300,
+        precio_coste: 3,
+        precio_venta: 9
+    },
+    {
+        id_flor: 2,
+        imagen_flor: "2.jpg",
+        nombre_flor: "Gelatto",
+        variedad: "Indica",
+        cantidad: 500,
+        precio_coste: 7,
+        precio_venta: 21
+    },
+    {
+        id_flor: 3,
+        imagen_flor: "3.jpg",
+        nombre_flor: "Cream Caramel",
+        variedad: "Indica",
+        cantidad: 1100,
+        precio_coste: 3,
+        precio_venta: 9
+    },
+    {
+        id_flor: 4,
+        imagen_flor: "4.jpg",
+        nombre_flor: "Lemonrella",
+        variedad: "Sativa",
+        cantidad: 800,
+        precio_coste: 7,
+        precio_venta: 21
+    },
+    {
+        id_flor: 5,
+        imagen_flor: "5.jpg",
+        nombre_flor: "Zushi",
+        variedad: "Indica",
+        cantidad: 300,
+        precio_coste: 30,
+        precio_venta: 90
+    },
+    {
+        id_flor: 6,
+        imagen_flor: "6.jpg",
+        nombre_flor: "Space jam",
+        variedad: "Indica",
+        cantidad: 150,
+        precio_coste: 4,
+        precio_venta: 12
+    },
+    {
+        id_flor: 7,
+        imagen_flor: "7.jpg",
+        nombre_flor: "Z Monkey",
+        variedad: "Hybrid",
+        cantidad: 2300,
+        precio_coste: 2,
+        precio_venta: 6
+    },
+    {
+        id_flor: 8,
+        imagen_flor: "8.jpg",
+        nombre_flor: "Green Poison",
+        variedad: "Indica",
+        cantidad: 3600,
+        precio_coste: 5,
+        precio_venta: 15
+    },
+    {
+        id_flor: 9,
+        imagen_flor: "9.jpg",
+        nombre_flor: "Zkittle Pie #5",
+        variedad: "Sativa",
+        cantidad: 60,
+        precio_coste: 3,
+        precio_venta: 9
+    },
+    {
+        id_flor: 10,
+        imagen_flor: "10.jpg",
+        nombre_flor: "Critical bilbo",
+        variedad: "Indica",
+        cantidad: 6400,
+        precio_coste: 20,
+        precio_venta: 60
+    }
+]
 
 var products=catalogo.length;
 console.log(catalogo);
