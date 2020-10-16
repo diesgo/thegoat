@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>CCSM | Dispensario</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <link rel="stylesheet" href="css/4.5.0/css/bootstrap.css"> -->
     <link rel="stylesheet" href="fontawesome5/css/all.css">
     <link rel="stylesheet" href="webfonts/stylesheet.css">
     <link rel="stylesheet" href="css/specimen_stylesheet.css">
@@ -125,6 +126,9 @@
             <p class="w3-right-align">Total: <span id="total"></span>&euro;</p>
             <button id="boton-vaciar" class="w3-button w3-round w3-block botonRojo">Vaciar carrito</button>
         </div>
+
+        <!-- Teclado numérico -->
+
         <div class="w3-container w3-padding">
             <table class="w3-auto">
                 <tr class="w3-center">
@@ -215,7 +219,8 @@
         <!-- TAB 1 -->
         
         <div id="tab01" class="tabcontent">
-            <div id="items1" class="w3-row-padding"></div>
+            <div id="items" class="w3-row-padding">
+            </div>
         </div>
 
         <!-- TAB 2 -->
@@ -242,9 +247,9 @@
             <div id="items5" class="w3-row-padding"></div>
         </div>
     </div>
-
+    <script src="admin/js/products.js"></script>
     <script src="js/carrito.js"></script>
-    <script src="js/carrito1.js"></script>
+    
     <!-- <script src="js/flowers.js"></script> -->
     <script src="admin/js/products.js"></script>
 
@@ -284,6 +289,7 @@
             document.getElementById(tabId).style.display = "block";
             evt.currentTarget.className += " w3-opacity";
         }
+        console.log("hola");
     </script>
 </body>
 
