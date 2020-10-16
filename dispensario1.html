@@ -11,17 +11,64 @@
     <link rel="stylesheet" href="css/specimen_stylesheet.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/w3-theme-blue-grey.css">
+    <link rel="stylesheet" href="css/carrito.css">
 </head>
 <style>
     .tabcontent {
         display: none;
         padding: 6px 12px;
-        -webkit-animation: fadeEffect 1s;
         animation: fadeEffect 1s;
     }
     .marcoEstrecho{
         padding: 4px;
     }
+    .sidepanel  {
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        height: 100%;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        }
+
+.sidepanel a {
+    padding: 8px 8px 8px 60%;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 0.3s;
+    }
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+}
+.dropdown-btn {
+  padding: 6px 8px 6px 60%;
+  text-decoration: none;
+  font-size: 25px;
+  color: inherit;
+  display: block;
+  border: none;
+  background: none;
+  width:100%;
+  text-align: left;
+  cursor: pointer;
+  outline: none;
+}
+.dropdown-container {
+  display: none;
+  padding-left: 8px;
+}
+.active {
+  background-color: green;
+  color: white;
+}
 </style>
 
 
@@ -63,28 +110,31 @@
 
     <!-- Overlay effect when opening sidebar on small screens -->
 
-    <div class="w3-container w3-block w3-theme-light" id="barraMenu" style="margin-left: 25%; padding: 0px">
+    <div class="w3-container w3-block w3-theme-light" style="margin-left: 25%; padding: 0px">
 
-        <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-        
-        <div class="tab w3-container">
-            <button class="tablinks w3-button w3-theme w3-round w3-hover-opacity w3-margin"
-                onclick="openTabCategory(event, 'tab01')">
-                <div class="w3-container"
-                    style="min-width: 120px; min-height: 125px;  vertical-align: middle; display: grid; text-shadow: #444 1px 1px 1px;">
-                    <p class="font-sweet-leaf w3-xlarge">Flores <br> y <br> derivados</p>
-                </div>
-            </button>
-            <button class="tablinks w3-button w3-theme w3-round w3-hover-opacity w3-margin"
-                onclick="openTabCategory(event, 'tab02')">
-                <div
-                    style="min-width: 120px; min-height: 125px;  vertical-align: middle; display: grid; text-shadow: #444 1px 1px 1px;">
-                    <div class="w3-container"
-                        style="min-width: 120px; min-height: 125px;  vertical-align: middle; display: grid;">
-                        <p class="font-sweet-leaf w3-xxlarge">BAR</p>
-                    </div>
-            </button>
+        <div id="mySidepanel" class="sidepanel w3-theme-l2">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <button class="dropdown-btn w3-button  w3-right-align w3-border w3-theme w3-padding-16">Flores y derivados <i class="fa fa-caret-down"></i></button>
+            <div class="dropdown-container w3-theme-l3">
+                <a href="#tab01" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab01'); closeNav()">Flores</a>
+                <a href="#tab02" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab02'); closeNav()">Hash</a>
+                <a href="#tab03" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab03'); closeNav()">Extractos</a>
+            </div>
+            <button class="dropdown-btn w3-button  w3-right-align w3-border w3-theme w3-padding-16">BAR <i class="fa fa-caret-down"></i></button>
+            <div class="w3-bar dropdown-container w3-theme-l3" style="padding: 6px 8px 6px 50%">
+                <input type="button" value="S" onclick="openTabCategory(event, 'tab04'); closeNav()">
+                <input type="button" value="R" onclick="openTabCategory(event, 'tab05'); closeNav()">
+                <input type="button" value="C" onclick="openTabCategory(event, 'tab06'); closeNav()">
+                <!-- <a href="#tab04" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab04'); closeNav()">Snacks</a>
+                <a href="#tab05" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab05'); closeNav()">Refrescos</a>
+                <a href="#tab06" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab06'); closeNav()">Café e Infusiones</a> -->
+            </div>
+            <a href="#tab07" class="w3-button w3-right-align w3-border w3-theme w3-padding-16 w3-margin-bottom">Parafernalia</a>
+            <a href="#">Clients</a>
+            <a href="#">Contact</a>
         </div>
+        
+        <button class="w3-button w3-theme" onclick="openNav()" style="position: fixed; top: 0;left: 25%;">☰</button>
 
     </div>
 
@@ -93,56 +143,56 @@
         <!-- TAB 1 -->
         
         <div id="tab01" class="tabcontent">
-            <script>
-                var categoria='flores';
-            </script>
-            <div id="items" class="w3-row-padding"></div>
+            <div id="items1" class="w3-row-padding"></div>
         </div>
 
         <!-- TAB 2 -->
 
         <div id="tab02" class="tabcontent">
-            <div class="tab w3-container">
-                <button class="tablinks w3-button w3-theme w3-round w3-hover-opacity w3-margin" onclick="openTabCategory(event, 'tab21')">
-                    <p class="font-sweet-leaf">Snacks</p>
-                </button>
-                <button class="tablinks w3-button w3-theme w3-round w3-hover-opacity w3-margin" onclick="openTabCategory(event, 'tab02')">
-                    <p class="font-sweet-leaf">Refrescos</p>
-                </button>
-                <button class="tablinks w3-button w3-theme w3-round w3-hover-opacity w3-margin" onclick="openTabCategory(event, 'tab02')">
-                    <p class="font-sweet-leaf">Café e Infuciones</p>
-                </button>
-            </div>
+           
         </div>
 
-        <div id="tab21" class="tabcontent">
-            <script>
-                var categoria ='snacks';
-            </script>
+        <!-- TAB 3 -->
+
+        <div id="tab03" class="tabcontent">
+            <div id="items3" class="w3-row-padding"></div>
+        </div>
+        
+        <!-- TAB 4 -->
+        
+        <div id="tab04" class="tabcontent">
+            <div id="items4" class="w3-row-padding"></div>
         </div>
 
     </div>
 
+    <script src="js/carrito.js"></script>
     <script src="js/carrito1.js"></script>
     <!-- <script src="js/flowers.js"></script> -->
     <script src="admin/js/products.js"></script>
 
     <script>
-        window.onscroll = function () { scrollFunction() };
-            function scrollFunction() {
-                block = document.getElementById("barraMenu");
-                if (document.body.scrollTop > 160 || document.documentElement.scrollTop > 160) {
-                    block.style.top = "0px";
-                    block.style.position = "fixed";
-                    block.classList.add("w3-animate-top");
-                    block.classList.add("w3-card");
+       function openNav() {
+            document.getElementById("mySidepanel").style.width = "50%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidepanel").style.width = "0";
+        }
+        
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
                 } else {
-                    block.style.top = "";
-                    block.style.position = "relative";
-                    block.classList.remove("w3-animate-top");
-                    block.classList.remove("w3-card");
+                    dropdownContent.style.display = "block";
                 }
-            } 
+            });
+        } 
 
         function openTabCategory(evt, tabId) {
             var i, tabcontent, tablinks;

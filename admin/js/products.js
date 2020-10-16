@@ -13,7 +13,7 @@ var socios = [
     {
         id_socio: 0,
         numero_socio: 1,
-        foto_socio: "img/s/0.png"
+        foto_socio: "img/s/0.png",
         nombre_socio: "Aitor",
         primer_apellido_socio: "Menta",
         segundo_apellido_socio: "Fuerte",
@@ -62,8 +62,10 @@ var categorias = [
     }
 ]
 
-var flores = [
 
+// Articulos 
+
+var flores = [
     {
         id_articulo: 0,
         imagen_articulo: "img/p/flores/0.jpg",
@@ -130,7 +132,7 @@ var flores = [
     {
         id_articulo: 7,
         imagen_articulo: "img/p/flores/7.jpg",
-        nombre_articulo: "Z Monkey",
+        nombre_articulo: "Z Money",
         variedad: "Hybrid",
         cantidad: 2300,
         precio_coste: 2,
@@ -167,7 +169,7 @@ var flores = [
 
 var snacks = [
     {
-        id_articulo: 0,
+        id_articulo: 11,
         imagen_articulo: "img/p/snack/0.jpg",
         nombre_articulo: "Snickers",
         variedad: "",
@@ -176,7 +178,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 1,
+        id_articulo: 12,
         imagen_articulo: "img/p/snack/1.jpg",
         nombre_articulo: "Crunch",
         variedad: "",
@@ -185,7 +187,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 2,
+        id_articulo: 12,
         imagen_articulo: "img/p/snack/2.jpg",
         nombre_articulo: "Twix",
         variedad: "",
@@ -194,16 +196,16 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 3,
+        id_articulo: 14,
         imagen_articulo: "img/p/snack/3.jpg",
-        nombre_articulo: "!Chips Ahoy",
+        nombre_articulo: "Chips Ahoy!",
         variedad: "",
         cantidad: 18,
         precio_coste: 0.68,
         precio_venta: 1
     },
     {
-        id_articulo: 4,
+        id_articulo: 15,
         imagen_articulo: "img/p/snack/4.jpg",
         nombre_articulo: "KitKat",
         variedad: "",
@@ -212,7 +214,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 5,
+        id_articulo: 16,
         imagen_articulo: "img/p/snack/5.jpg",
         nombre_articulo: "Reese's",
         variedad: "",
@@ -221,7 +223,7 @@ var snacks = [
         precio_venta: 2.5
     },
     {
-        id_articulo: 6,
+        id_articulo: 17,
         imagen_articulo: "img/p/snack/6.jpg",
         nombre_articulo: "Hersheys white",
         variedad: "",
@@ -230,16 +232,16 @@ var snacks = [
         precio_venta: 2
     },
     {
-        id_articulo: 7,
+        id_articulo: 18,
         imagen_articulo: "img/p/snack/7.jpg",
-        nombre_articulo: "Hersheys original",
+        nombre_articulo: "Hershey's",
         variedad: "",
         cantidad: 48,
         precio_coste: 0.78,
         precio_venta: 2
     },
     {
-        id_articulo: 8,
+        id_articulo: 19,
         imagen_articulo: "img/p/snack/8.jpg",
         nombre_articulo: "Nerds",
         variedad: "",
@@ -248,7 +250,7 @@ var snacks = [
         precio_venta: 2
     },
     {
-        id_articulo: 9,
+        id_articulo: 20,
         imagen_articulo: "img/p/snack/9.jpg",
         nombre_articulo: "Haribo",
         variedad: "",
@@ -257,7 +259,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 10,
+        id_articulo: 21,
         imagen_articulo: "img/p/snack/10.jpg",
         nombre_articulo: "Pringles",
         variedad: "",
@@ -266,7 +268,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 11,
+        id_articulo: 22,
         imagen_articulo: "img/p/snack/11.jpg",
         nombre_articulo: "Patatas fritas",
         variedad: "",
@@ -275,7 +277,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 12,
+        id_articulo: 23,
         imagen_articulo: "img/p/snack/12.jpg",
         nombre_articulo: "Bounty",
         variedad: "",
@@ -284,7 +286,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 13,
+        id_articulo: 24,
         imagen_articulo: "img/p/snack/13.jpg",
         nombre_articulo: "Skittles",
         variedad: "",
@@ -293,7 +295,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 14,
+        id_articulo: 25,
         imagen_articulo: "img/p/snack/14.jpg",
         nombre_articulo: "m&m",
         variedad: "",
@@ -302,7 +304,7 @@ var snacks = [
         precio_venta: 1
     },
     {
-        id_articulo: 15,
+        id_articulo: 26,
         imagen_articulo: "img/p/snack/15.jpg",
         nombre_articulo: "m&m",
         variedad: "",
@@ -311,6 +313,3 @@ var snacks = [
         precio_venta: 1
     }
 ]
-
-var products=catalogo.length;
-console.log(catalogo); 
