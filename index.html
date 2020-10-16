@@ -83,7 +83,7 @@
 
                 <div id="shop-img"><img class="w3-image" src="img/logo_negro.png" alt="Club Name" /></div>
 
-                <div class="flip-container">
+                <div class="flip-container w3-margin-bottom">
                     
                         <div class="front panel w3-white">
                             <h4 id="shop_name">The Goat</h4>
@@ -94,7 +94,20 @@
                                 </div>
                                 <div class="w3-margin-bottom">
                                     <label for="passwd">Contraseña</label>
-                                    <input name="passwd" type="password" id="passwd" class="w3-block" tabindex="2" placeholder="&#128273 Contraseña"/>
+                                    <input name="passwd" type="password" id="password" class="w3-block" tabindex="2" placeholder="&#128273 Contraseña"/><br>
+                                    <label class="w3-right" for="passwd" style="position: relative; top: -15px;">Show Password
+                                        <input type="checkbox" onclick="showPassword()">
+                                    </label>
+                                    <script>
+                                        function showPassword() {
+                                            var x = document.getElementById("password");
+                                            if (x.type === "password") {
+                                                x.type = "text";
+                                            } else {
+                                                x.type = "password";
+                                            }
+                                        }
+                                    </script>
                                 </div>
                                 <div class="w3-margin-bottom">
                                     <div class="custom-select">

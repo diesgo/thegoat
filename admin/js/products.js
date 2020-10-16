@@ -313,3 +313,113 @@ var snacks = [
         precio_venta: 1
     }
 ]
+var refrescos = [
+    {
+        id_articulo: 27,
+        imagen_articulo: "img/p/refrescos/0.jpg",
+        nombre_articulo: "CocaCola",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 28,
+        imagen_articulo: "img/p/refrescos/1.jpg",
+        nombre_articulo: "Fanta",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 27,
+        imagen_articulo: "img/p/refrescos/2.jpg",
+        nombre_articulo: "Agua",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.20,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 28,
+        imagen_articulo: "img/p/refrescos/3.jpg",
+        nombre_articulo: "Aquarius",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 29,
+        imagen_articulo: "img/p/refrescos/4.jpg",
+        nombre_articulo: "Aquarius N",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 30,
+        imagen_articulo: "img/p/refrescos/5.jpg",
+        nombre_articulo: "Dr Peeper",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 2
+    },
+    {
+        id_articulo: 31,
+        imagen_articulo: "img/p/refrescos/6.jpg",
+        nombre_articulo: "Zumo melocoton",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 32,
+        imagen_articulo: "img/p/refrescos/7.jpg",
+        nombre_articulo: " Zumo naranja",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 33,
+        imagen_articulo: "img/p/refrescos/8.jpg",
+        nombre_articulo: "Zumo mango",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 1
+    },
+    {
+        id_articulo: 34,
+        imagen_articulo: "img/p/refrescos/9.jpg",
+        nombre_articulo: "Looza fresa",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 2
+    },
+    {
+        id_articulo: 35,
+        imagen_articulo: "img/p/refrescos/10.jpg",
+        nombre_articulo: "Looza melocoton",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 2
+    },
+    {
+        id_articulo: 36,
+        imagen_articulo: "img/p/refrescos/11.jpg",
+        nombre_articulo: "Looza naranja",
+        variedad: "",
+        cantidad: 48,
+        precio_coste: 0.48,
+        precio_venta: 2
+    }
+]

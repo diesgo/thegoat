@@ -1,6 +1,7 @@
 window.onload = function () {  
     let $items1 = document.querySelector('#items1');
     let $items4 = document.querySelector('#items4');
+    let $items5 = document.querySelector('#items5');
     let carrito = [];
     let total = 0;
     let $carrito = document.querySelector('#carrito');
@@ -8,7 +9,7 @@ window.onload = function () {
     let $botonVaciar = document.querySelector('#boton-vaciar');
     
     // Funciones
-    
+
     function renderItems() {
         for (let info of  flores) {
             // Ficha de producto
@@ -163,6 +164,69 @@ window.onload = function () {
         }
     }
 
+    function renderItems5() {
+        for (let info of refrescos) {
+            // Ficha de producto            
+            let fichaArticulo = document.createElement('div');
+            fichaArticulo.classList.add('producto', 'w3-col', 'm3', 'l3', 's12', 'w3-margin-bottom', 'w3-padding');
+            // Contenedor    
+            let contPrin = document.createElement('div');
+            contPrin.classList.add('w3-container', 'w3-border', 'w3-round', 'marcoEstrecho');
+            // Contenedor del título    
+            let contTitulo = document.createElement("div");
+            contTitulo.classList.add('w3-container');
+            let nombreArticulo = document.createElement('h6');
+            nombreArticulo.classList.add('font-lemonada');
+            let nombreArticuloDestacado = document.createElement('b');
+            nombreArticuloDestacado.textContent = info['nombre_articulo'];
+            nombreArticulo.appendChild(nombreArticuloDestacado);
+            contTitulo.appendChild(nombreArticulo);
+            // Imagen    
+            let contImagen = document.createElement('div');
+            contImagen.classList.add('w3-half', 'w3-padding-4');
+            let imagenArticulo = document.createElement('img');
+            imagenArticulo.classList.add('w3-image');
+            imagenArticulo.setAttribute('src', info['imagen_articulo']);
+            contImagen.appendChild(imagenArticulo)
+            // Precio    
+            let contPrecio = document.createElement('div');
+            contPrecio.classList.add('w3-half', 'marcoEstrecho');
+            let precioArticulo = document.createElement('p');
+            precioArticulo.classList.add('w3-xlarge');
+            let precioDestacado = document.createElement('b');
+            precioDestacado.textContent = info['precio_venta'];
+            let unidadVenta = document.createElement('span');
+            unidadVenta.classList.add('w3-small');
+            unidadVenta.textContent = ' €/gr.';
+            // Variedad
+            // let variedad = document.createElement('span');
+            // variedad.classList.add('w3-orange', 'w3-text-dark-grey', 'w3-round-xxlarge', 'w3-padding-tiny');
+            // let variedadDestacada = document.createElement('b');
+            // variedadDestacada.textContent = info['variedad'];
+            // variedad.appendChild(variedadDestacada);
+            precioArticulo.appendChild(precioDestacado);
+            precioArticulo.appendChild(unidadVenta);
+            contPrecio.appendChild(variedad);
+            contPrecio.appendChild(precioArticulo);
+            // Boton
+            let contBoton = document.createElement('div');
+            contBoton.classList.add('w3-container', 'w3-padding-0');
+            let boton = document.createElement('button');
+            boton.classList.add('w3-button', 'w3-theme', 'w3-block');
+            boton.textContent = 'Comprar';
+            boton.setAttribute('marcador', info['id_articulo']);
+            boton.addEventListener('click', anyadirCarrito);
+            contBoton.appendChild(boton);
+            // Insertamos
+            contPrin.appendChild(contTitulo);
+            contPrin.appendChild(contImagen);
+            contPrin.appendChild(contPrecio);
+            contPrin.appendChild(variedad);
+            contPrin.appendChild(contBoton);
+            fichaArticulo.appendChild(contPrin);
+            $items5.appendChild(fichaArticulo);
+        }
+    }
     function anyadirCarrito() {
         
         // Anyadimos el Nodo a nuestro carrito
@@ -172,13 +236,18 @@ window.onload = function () {
         // Calculo el total
         
         calcularTotal();
+        calcularTotal4();
         
         // Renderizamos el carrito
         
         renderizarCarrito();
         renderizarCarrito4();
+
     }
     
+
+
+
     function renderizarCarrito() {
         
         // Vaciamos todo el html
@@ -309,30 +378,7 @@ window.onload = function () {
         })
     }
 
-    function borrarItemCarrito() {
-        console.log()
-        
-        // Obtenemos el producto ID que hay en el boton pulsado
-        
-        let id = this.getAttribute('item');
-        
-        // Borramos todos los productos
-        
-        carrito = carrito.filter(function (carritoId) {
-            return carritoId !== id;
-        });
-        
-        // volvemos a renderizar
-        
-        renderizarCarrito();
-        renderizarCarrito4();
 
-        // Calculamos de nuevo el precio
-        
-        calcularTotal();
-        calcularTotal4();
-    }
-    
     function calcularTotal() {
         
         // Limpiamos precio anterior
@@ -385,7 +431,7 @@ window.onload = function () {
 
         $total.textContent = totalDosDecimales;
     }
-    
+
     function vaciarCarrito() {
         
         // Limpiamos los productos guardados
@@ -395,7 +441,10 @@ window.onload = function () {
         // Renderizamos los cambios
         
         renderizarCarrito();
+        renderizarCarrito4();
+
         calcularTotal();
+        calcularTotal4();
     }
     
     // Eventos
