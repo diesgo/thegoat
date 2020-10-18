@@ -12,14 +12,62 @@ var tipoDeVenta =[
 var socios = [
     {
         id_socio: 0,
-        numero_socio: 1,
+        numero_socio: 0,
         foto_socio: "img/s/0.png",
         nombre_socio: "Aitor",
         primer_apellido_socio: "Menta",
         segundo_apellido_socio: "Fuerte",
         fecha_de_nacimiento: "29/02/2002",
-        dni: "123654789X",
+        dni: "12345678A",
         sexo: "hombre",
+        credito: 100
+    },
+    {
+        id_socio: 1,
+        numero_socio: 1,
+        foto_socio: "img/s/1.png",
+        nombre_socio: "Armando",
+        primer_apellido_socio: "Bulla",
+        segundo_apellido_socio: "Segura",
+        fecha_de_nacimiento: "29/02/1997",
+        dni: "87654321Z",
+        sexo: "hombre",
+        credito: 100
+    },
+    {
+        id_socio: 2,
+        numero_socio: 2,
+        foto_socio: "img/s/2.png",
+        nombre_socio: "Eva",
+        primer_apellido_socio: "Fina",
+        segundo_apellido_socio: "Segura",
+        fecha_de_nacimiento: "14/05/2000",
+        dni: "23456789B",
+        sexo: "mujer",
+        credito: 100
+    },
+    {
+        id_socio: 3,
+        numero_socio: 3,
+        foto_socio: "img/s/3.png",
+        nombre_socio: "Johnny",
+        primer_apellido_socio: "Mentero",
+        segundo_apellido_socio: "",
+        fecha_de_nacimiento: "01/01/1960",
+        dni: "98765432Y",
+        sexo: "hombre",
+        credito: 100
+    },
+    {
+        id_socio: 4,
+        numero_socio: 4,
+        foto_socio: "img/s/4.png",
+        nombre_socio: "John",
+        primer_apellido_socio: "Doe",
+        segundo_apellido_socio: "",
+        fecha_de_nacimiento: "13/12/1998",
+        dni: "34567890C",
+        sexo: "Transexual",
         credito: 100
     }
 ]
@@ -421,5 +469,106 @@ var refrescos = [
         cantidad: 48,
         precio_coste: 0.48,
         precio_venta: 2
+    }
+]
+var hash = [
+    {
+        id_articulo: 37,
+        imagen_articulo: "img/p/hash/0.jpg",
+        nombre_articulo: "OG Kush",
+        variedad: "Indica",
+        cantidad: 2500,
+        precio_coste: 3,
+        precio_venta: 7
+    },
+    {
+        id_articulo: 38,
+        imagen_articulo: "img/p/hash/1.jpg",
+        nombre_articulo: "Rolex OG",
+        variedad: "Sativa",
+        cantidad: 1300,
+        precio_coste: 3,
+        precio_venta: 7
+    },
+    {
+        id_articulo: 39,
+        imagen_articulo: "img/p/hash/2.jpg",
+        nombre_articulo: "Cream Caramel",
+        variedad: "Indica",
+        cantidad: 500,
+        precio_coste: 3,
+        precio_venta: 7
+    },
+    {
+        id_articulo: 40,
+        imagen_articulo: "img/p/hash/3.jpg",
+        nombre_articulo: "Cindelella",
+        variedad: "Indica",
+        cantidad: 1100,
+        precio_coste: 4,
+        precio_venta: 8
+    },
+    {
+        id_articulo: 41,
+        imagen_articulo: "img/p/hash/4.jpg",
+        nombre_articulo: "Lemon Rella",
+        variedad: "Sativa",
+        cantidad: 800,
+        precio_coste: 4,
+        precio_venta: 8
+    },
+    {
+        id_articulo: 42,
+        imagen_articulo: "img/p/hash/5.jpg",
+        nombre_articulo: "Limoncello",
+        variedad: "Indica",
+        cantidad: 300,
+        precio_coste: 6,
+        precio_venta: 13
+    },
+    {
+        id_articulo: 43,
+        imagen_articulo: "img/p/hash/6.jpg",
+        nombre_articulo: "Area 51",
+        variedad: "Indica",
+        cantidad: 150,
+        precio_coste: 7,
+        precio_venta: 14
+    },
+    {
+        id_articulo: 44,
+        imagen_articulo: "img/p/hash/7.jpg",
+        nombre_articulo: "Banookies",
+        variedad: "Hybrid",
+        cantidad: 2300,
+        precio_coste: 7,
+        precio_venta: 14
+    },
+    {
+        id_articulo: 45,
+        imagen_articulo: "img/p/hash/8.jpg",
+        nombre_articulo: "Papaya Punch",
+        variedad: "Indica",
+        cantidad: 3600,
+        precio_coste: 7,
+        precio_venta: 14
+    },
+    {
+        id_articulo: 46,
+        imagen_articulo: "img/p/hash/9.jpg",
+        nombre_articulo: "Sweet Sunset",
+        variedad: "Sativa",
+        cantidad: 60,
+        precio_coste: 8,
+        precio_venta: 16
+    },
+    {
+        id_articulo: 47,
+        imagen_articulo: "img/p/hash/10.jpg",
+        nombre_articulo: "Cost O'Delbueno",
+        variedad: "Indica",
+        cantidad: 6400,
+        precio_coste: 20,
+        precio_venta: 60
     }
 ]

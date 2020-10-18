@@ -16,16 +16,19 @@ function w3_close() {
     mySidebar.style.display = "none";
     overlayBg.style.display = "none";
 }
-
-function dropdown(id) {
+function drop(id) {
     var x = document.getElementById(id);
+    console.log(x);
     if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
+        x.classList.add("w3-show");
+        x.classList.add("w3-animate-opacity");
     } else {
-        x.className = x.className.replace(" w3-show", "");
+        x.classList.remove("w3-show");
+        x.classList.remove("w3-animate-opacity");
     }
 }
-function openTab(evt, cityName) {
+
+function openTab(evt, tabNumber) {
     var i, x, tablinks;
     x = document.getElementsByClassName("tab");
     for (i = 0; i < x.length; i++) {
@@ -35,7 +38,7 @@ function openTab(evt, cityName) {
     for (i = 0; i < x.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" w3-white w3-text-theme", "");
     }
-    document.getElementById(cityName).style.display = "block";
+    document.getElementById(tabNumber).style.display = "block";
     evt.currentTarget.className += " w3-white w3-text-theme";
 }
 
@@ -75,3 +78,12 @@ function closeAllSelect(elmnt) {
 /*if the user clicks anywhere outside the select box,
 then close all select boxes:*/
 document.addEventListener("click", closeAllSelect);
+
+function validateChip(chipId){
+     return socios === chipId;
+    
+
+    function result() {
+        document.getElementById("demo").innerHTML = ages.find(validateChip);
+    }
+}

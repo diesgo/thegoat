@@ -1,151 +1,390 @@
+<!-- <script>
+    setInterval(function () {
+        $.ajax({
+            type: "post",
+            url: "scansearch.php",
+            datatype: "text",
+            success: function (data) {
+                if (data == 'false') {
+
+                } else if (data == 'notregistered') {
+
+                    window.location.replace("main.php?notregistered");
+
+                } else {
+
+                    window.location.replace("profile.php?user_id=" + data);
+
+                }
+            }
+        });
+    }, 3000);
+</script> -->
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <link rel="stylesheet" href="css/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/w3.css">
-    <link rel="stylesheet" href="css/w3-theme-blue-grey.css">
-    <link rel="stylesheet" href="fontawesome5/css/all.css">
+    <title>CCS</title>
+    <link rel='stylesheet' href='https://ccsnubev2.com/v6/css/stylesv6.css?t=1602953074' type='text/css' />
+    <link rel="stylesheet" href="https://ccsnubev2.com/v6/css/dev.css?t=1602953074" type="text/css" />
+    <link rel="stylesheet" href="https://ccsnubev2.com/v6/css/jquery-ui.css" type="text/css" />
+    <link rel="stylesheet" href="https://ccsnubev2.com/v6/css/dd_signature_pad.css" type="text/css" />
+    <link rel="stylesheet" href="https://ccsnubev2.com/v6/css/select2.min.css" type="text/css" />
+    <link rel="shortcut icon" href="https://ccsnubev2.com/v6/favicon.ico">
+    <link rel="stylesheet" href="https://ccsnubev2.com/v6/css/jquery.keypad.css" type="text/css">
+    <link rel="stylesheet" href="https://ccsnubev2.com/v6/css/jquery.ui.timepicker.css" type="text/css">
+    <script type="text/javascript" src="https://ccsnubev2.com/v6/scripts/jquery-1.10.2.min.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/select2.min.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/jquery.validate.min.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/additional-methods.min.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/jquery-ui.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/webcam.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/jquery.tablesorter.min.js"></script>
+    <script src="https://ccsnubev2.com/v6/scripts/jquery.table2excel.js"></script>
+    <script type="text/javascript" src="https://ccsnubev2.com/v6/scripts/jquery.plugin.js"></script>
+    <script type="text/javascript" src="https://ccsnubev2.com/v6/scripts/jquery.keypad.js"></script>
+    <script type="text/javascript" src="https://ccsnubev2.com/v6/scripts/jquery.ui.timepicker.js"></script>
+
+
+    <script>
+        jQuery(document).ready(function ($) {
+
+            $(".clickableRow").click(function () {
+                window.document.location = $(this).attr("href");
+            });
+
+            $(".clickableRowNew").click(function () {
+                window.open(
+                    $(this).attr("href"),
+                    '_blank' // <- This is what makes it open in a new window.
+                );
+            });
+
+            $('.noEnterSubmit').keypress(function (e) {
+                if (e.which == 13) return false;
+                //or...
+                if (e.which == 13) e.preventDefault();
+            });
+        });
+    </script>
 </head>
-<style>
-body {
-    background-color: #eff1f2;
-    color: #555;
-    font: 400 12px/1.42857 Open Sans,Helvetica,Arial,sans-serif;
-    direction: ltr;
-    margin: 0;
-}
 
-.bootstrap #login {
-    min-height: 100%;
-    padding-bottom: 45px;
-}
-.bootstrap #login-panel {
-    margin: 0 auto;
-    width: 350px;
-}
-.bootstrap #login-header {
-    color: #6d6d6d;
-    margin-bottom: 30px;
-    padding-top: 40px;
-}
+<body id="pindex" class="notSelected">
 
-.bootstrap #login-panel .flip-container {
-    -webkit-perspective: 1000px;
-    -webkit-transform-style: preserve-3d;
-    height: 420px;
-    margin-top: 115px;
-    perspective: 1000px;
-    transform-style: preserve-3d;
-}
-.bootstrap #login-panel .back, .bootstrap #login-panel .front {
-    -webkit-backface-visibility: hidden;
-    -webkit-transform-style: preserve-3d;
-    -webkit-transition: .6s;
-    backface-visibility: hidden;
-    left: 0;
-    padding: 40px;
-    position: absolute;
-    top: 0;
-    transform-style: preserve-3d;
-    transition: .6s;
-    width: 100%;
-    }
-.bootstrap #login-panel #dash_version, .bootstrap #login-panel .message-item-initial .message-item-initial-body, .bootstrap #login-panel .panel, .bootstrap #login-panel .timeline .timeline-item .timeline-caption .timeline-panel, .bootstrap .message-item-initial #login-panel .message-item-initial-body, .bootstrap .timeline .timeline-item .timeline-caption #login-panel .timeline-panel {
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,.3);
-    border-radius: 0;
-    box-shadow: 0 1px 3px rgba(0,0,0,.3);
-}
-.bootstrap #shop-img {
-    left: 0;
-    margin: 0 auto;
-    position: absolute;
-    right: 0;
-    width: 110px;
-    z-index: 1;
-}
+    <script>
+        function handleScroll(e) {
+            if (e.target.tagName.toLowerCase() === 'input'
+                && (e.target.type === 'number')
+                && (e.target === document.activeElement)
+                && !e.target.readOnly
+            ) {
+                e.target.readOnly = true;
+                setTimeout(function (el) { el.readOnly = false; }, 0, e.target);
+            }
+        }
+        document.addEventListener('wheel', function (e) { handleScroll(e); });
+    </script>
 
-</style>
-<body class="bootstrap">
-    <div id="login">
-        <div id="content">
-            <div id="login-panel">
+    <style>
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
 
-                <div id="login-header">
-                    <h1 class="w3-center">
-                        <img id="logo" src="img/ccms_logo.png" width="123px" alt="PrestaShop" />
-                    </h1>
-                    <div class="w3-center">1.0</div>
-                </div>
-                
-                <div id="shop-img"><img class="w3-image" src="img/logo_negro.png" alt="Club Name" /></div>
-               
-                <div class="flip-container">
-                    <div class="">
-                        <div class="front front_login panel">
-                            <h4 id="shop_name">The Goat</h4>
-                            <form action="admin/index.html" id="login_form" method="post"> 
-                                <div class="form-group">
-                                    <label class="control-label" for="email">Nombre de usuario</label>
-                                    <input name="email" type="email" id="email" class="form-control" value="" autofocus="autofocus" tabindex="1" placeholder="&#128100 username" />
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label" for="passwd">
-                                        Contraseña
-                                    </label>
-                                    <input name="passwd" type="password" id="passwd" class="form-control" value="" tabindex="2" placeholder="&#128273 Contraseña" />
-                                </div>
-                                <div class="form-group">
-                                    <div class="custom-select">
-                                        <label class="control-label" for="rol">
-                                            Seleccione un rol
-                                        </label>
-                                        <select name="rol" id="rol" style="width: 100%;">
-                                            <option value="0"> Entrar como...</option>
-                                            <option value="1"> Administrador</option>
-                                            <option value="2"> Vendedor</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <button id="submit_login" name="submitLogin" type="submit" tabindex="4"
-                                        class="btn btn-primary btn-lg btn-block ladda-button" data-style="slide-up" data-spinner-color="white">
-                                        <span class="ladda-label">
-                                            Iniciar sesión
-                                        </span>
-                                    </button>
-                                </div>
+            50% {
+                opacity: 0;
+            }
 
-                            </form>
+            100% {
+                opacity: 1;
+            }
+        }
+
+        #hotIcon {
+            animation: blink 1s;
+            animation-iteration-count: infinite;
+        }
+
+        #feedbackAlert {
+            animation: blink 1s;
+            animation-iteration-count: infinite;
+        }
+    </style>
+    <!--<script>
+(function (global) {
+
+	if(typeof (global) === "undefined")
+	{
+		throw new Error("window is undefined");
+	}
+
+    var _hash = "!";
+    var noBackPlease = function () {
+        global.location.href += "#";
+
+		// making sure we have the fruit available for juice....
+		// 50 milliseconds for just once do not cost much (^__^)
+        global.setTimeout(function () {
+            global.location.href += "!";
+        }, 50);
+    };
+	
+	// Earlier we had setInerval here....
+    global.onhashchange = function () {
+        if (global.location.hash !== _hash) {
+            global.location.hash = _hash;
+        }
+    };
+
+    global.onload = function () {
+        
+		noBackPlease();
+
+		// disables backspace on page except on input fields and textarea..
+		document.body.onkeydown = function (e) {
+            var elm = e.target.nodeName.toLowerCase();
+            if (e.which === 8 && (elm !== 'input' && elm  !== 'textarea')) {
+                e.preventDefault();
+            }
+            // stopping event bubbling up the DOM tree..
+            e.stopPropagation();
+        };
+		
+    };
+
+})(window);
+</script>-->
+
+
+
+    <div id="wrapper">
+        <div id="header">
+            <div id="pagecontrols">
+                <div id="icons">
+                    <a href='change-scanner.php?scannerid=2'><img src='images/2.png'
+                            style='margin-left: 14px; margin-bottom: 4px;' /></a> <a href='#'><img
+                            src='https://ccsnubev2.com/v6/images/icon-flame.png'
+                            style='margin-left: 14px; margin-bottom: 4px;' id='hotIcon' /></a> <a href='#'
+                        id='showNotifications'><img src='images/bell.png'
+                            style='margin-left: 14px; margin-bottom: 4px;' /></a>
+                    <div id='notificationBox' class='actionbox-np2'>
+                        <div class='mainboxheader'>Notificaciones</div>
+                        <div class='boxcontent' id='notificationContent'>
+                            <table class='notificationTable'>
+
+                            </table>
                         </div>
                     </div>
                 </div>
-    
-                <div id="login-footer">
-                    <p class="text-center text-muted">
-                        <a href="http://www.prestashop.com/" onclick="return !window.open(this.href);">
-                            &copy; CCSM&#8482; 2020-2020 - All rights reserved
-                        </a>
-                    </p>
-                    <p class="text-center">
-                        <a class="link-social link-twitter _blank w3-text-blue w3-xlarge" href="https://twitter.com" title="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="link-social link-facebook _blank w3-text-indigo w3-xlarge" href="https://www.facebook.com" title="Facebook">
-                            <i class="fab fa-facebook"></i>
-                        </a>
-                        <a class="link-social link-github _blank w3-xlarge" href="https://www.prestashop.com/github" title="Github">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </p>
+                <br />
+                <div id="controls">
+
+                    <img src="https://ccsnubev2.com/v6/images/clock.png" style="margin-bottom: -2px;" />&nbsp;17th
+                    October 2020 18:44
+                    &nbsp;&nbsp;<span id="loggedinName"><img src="https://ccsnubev2.com/v6/images/user.png"
+                            style="margin-bottom: -2px;" /> Diego <img src="https://ccsnubev2.com/v6/images/flecha.png"
+                            style="margin-bottom: 2px; margin-left: 2px;" /></span> <span class='relative'><a
+                            href='help-center.php'><img src='https://ccsnubev2.com/v6/images/help-center.png'
+                                style='vertical-align: bottom; margin-left: 15px;' /></a></span> <img
+                        src='https://ccsnubev2.com/v6/images/lang-es.png' id='langselect'
+                        style='vertical-align: bottom; margin-left: 15px;' /> <a href='admin.php'><img
+                            src='https://ccsnubev2.com/v6/images/admin.png'
+                            style='vertical-align: bottom; margin-left: 15px;' /></a> <a
+                        href='uTil/logout-manual.php'><img src='https://ccsnubev2.com/v6/images/logout.png'
+                            style='vertical-align: bottom; margin-left: 15px;' /></a>
+                    <span style='position: relative;'>
+                        <div id="langlist">
+                            <a href='?lang=en&'><img src='https://ccsnubev2.com/v6/images/gb.png'
+                                    style='margin-bottom: 1px;' /> English</a><br />
+                            <a href='?lang=es&'><img src='https://ccsnubev2.com/v6/images/es.png'
+                                    style='margin-bottom: 1px;' /> Español</a><br />
+                            <a href='?lang=ca&'><img src='https://ccsnubev2.com/v6/images/ca.png'
+                                    style='margin-bottom: 1px;' /> Catalá</a><br />
+                            <a href='?lang=fr&'><img src='https://ccsnubev2.com/v6/images/fr.png'
+                                    style='margin-bottom: 1px;' /> Français</a><br />
+                            <a href='?lang=nl&'><img src='https://ccsnubev2.com/v6/images/nl.png'
+                                    style='margin-bottom: 1px;' /> Nederlands</a><br />
+                            <a href='?lang=it&'><img src='https://ccsnubev2.com/v6/images/it.png'
+                                    style='margin-bottom: 1px;' /> Italiano</a><br />
+                        </div>
+                    </span>
+                    <div id="stafflist">
+                        <a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=1'>Demo Usuario</a><br /><a
+                            href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=4'>Javier Salva
+                            Ferrer</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=6'>Ali
+                            Ali</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=67'>Tatiana
+                            Beghe</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=78'>Said
+                            S</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=1040'>Laura
+                            Exposito</a><br /><a
+                            href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=2462'>Lizeth Gabriela Sanchez
+                            Rebellon</a><br /><a
+                            href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=3732'>Preslava
+                            Kaneva</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=5141'>Juan
+                            carlos Bautista fernandez</a><br /><a
+                            href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=5376'>Ramon duart
+                            Baldovi</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=5377'>Falco
+                            Peydro marc</a><br /><a
+                            href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=5415'>Stuart brian
+                            Reynolds</a><br /><a href='https://ccsnubev2.com/v6/change-user.php?loggedinuser=5440'>Clara
+                            Boffa</a><br />
+                    </div>
                 </div>
+                <a href="index.php" id="logo"><img src="https://ccsnubev2.com/v6/images/_goat/logo.png" /></a>
             </div>
-    
-    
-        </div>
-    </div>
-</body>
-</html>
+            <div id="messagelist">
+                <table>
+                    <tr>
+                        <td style="vertical-align: middle;"><img src="images/bell.png" style="margin-right: 5px;" />
+                        </td>
+                        <td style="vertical-align: top;"><strong>&iexcl;Aviso importante!</strong><br />Hemos
+                            actualizado el contrato de Software CCS.<br />Para continuar usando el software, debes
+                            firmar los términos y condiciones actualizado antes del 31 de octubre de 2020.<br /><br />
+                            <center><a href='contract-en.php'>Haga clic aquí para ver y firmar el contrato.</a></center>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+
+            <script>
+                $("#loggedinName").click(function () {
+                    $('#stafflist').toggle();
+                });
+
+                $("#langselect").click(function () {
+                    $('#langlist').toggle();
+                });
+
+                $("#messageSwitch").click(function () {
+                    $("#messagelist2").toggle();
+                    $("#msgIcon").css("opacity", "0.3");
+                });
+
+                $("#hotIcon").click(function () {
+                    $("#messagelist").toggle();
+                });
+
+                $("#closeTooltip").click(function () {
+                    $("#tooltip").css("display", "none");
+                    // Run ajax to update db to show they've already clicked the X.
+                });
+                $("#showNotifications").click(function () {
+
+                    if ($("#notificationBox").css('display') == 'none') {
+
+                        // Box is closed, show notifications - THEN mark as read
+                        $("#notificationBox").css("display", "block");
+                        $.ajax({
+                            type: "post",
+                            url: "get-notifications.php",
+                            datatype: "text",
+                            success: function (data) {
+                                if (data == 'false') {
+
+                                } else {
+
+                                    $(".notificationTable").html(data);
+
+                                }
+                            }
+                        });
+
+                    } else {
+
+                        // Box is open, so run script to mark as read
+                        $("#notificationBox").css("display", "none");
+                        $.ajax({
+                            type: "post",
+                            url: "mark-read.php",
+                            datatype: "text",
+                            success: function (data) {
+                                if (data == 'false') {
+
+                                } else {
+
+                                    if (data == '') {
+                                        $("#noteCount").hide();
+                                    } else {
+                                        $("#noteCount").html(data);
+                                    }
+
+                                }
+                            }
+                        });
+
+                    }
+
+                    // If notificationbox is open, mark as read
+                    // If closed, open box but don't perform any action
+
+                    // $("#notificationBox").toggle();
+                    // Run ajax to mark messages as read + retrieve new number of unread
+
+
+                });
+
+                $("#showOrders").click(function () {
+
+                    if ($("#orderBox").css('display') == 'none') {
+
+                        $("#orderBox").css("display", "block");
+
+                    } else {
+
+                        $("#orderBox").css("display", "none");
+
+                    }
+
+                    // If notificationbox is open, mark as read
+                    // If closed, open box but don't perform any action
+
+                    // $("#notificationBox").toggle();
+                    // Run ajax to mark messages as read + retrieve new number of unread
+
+
+                });
+
+            </script>
+        </div> <!-- end HEADER -->
+        <div id="titlearea">
+            <h2></h2>
+        </div> <!-- end titlearea -->
+        <div id='main'>
+            <form onsubmit='oneClick.disabled = true; return true;' id="registerForm" action="" autocomplete="off"
+                method="POST">
+                <input type="text" name="cardid" id="focus" maxlength="30" autofocus value="" /><br />
+                <button name='oneClick' type="submit" style='display: none;'>Aceptar</button>
+            </form>
+
+
+            <script>
+
+                $(document).ready(function () {
+                    $("#focus").focus().bind('blur', function () {
+                        $(this).focus();
+                    });
+
+                    $("html").click(function () {
+                        $("#focus").val($("#focus").val()).focus();
+                    });
+
+                    //disable the tab key
+                    $(document).keydown(function (objEvent) {
+                        if (objEvent.keyCode == 9) {  //tab pressed
+                            objEvent.preventDefault(); // stops its action
+                        }
+                    })
+                });
+            </script>
+
+
+            <center>
+                <span class="ctalinks">
+                    <a href="new-dispense.php"><span id="dispenseCTA"></span><br />DISPENSAR</a>
+                    <a href="menu.php"><span id="productsCTA"></span><br />MENÚ</a>
+                    <a href="bar-new-sale.php"><span id="barCTA"></span><br />BAR</a><br />
+                    <a href="scan-profile.php"><span id="profileCTA"></span><br />PERFIL</a>
+                    <a href="members.php"><span id="membersCTA"></span><br />SOCIOS</a>
+                    <a href="new-member-0.php"><span id="newmemberCTA"></span><br />SOCIO NUEVO</a>
+                </span>
+            </center>

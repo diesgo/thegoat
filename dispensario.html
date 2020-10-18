@@ -7,11 +7,13 @@
     <title>CCSM | Dispensario</title>
     <!-- <link rel="stylesheet" href="css/style.css"> -->
     <!-- <link rel="stylesheet" href="css/4.5.0/css/bootstrap.css"> -->
+    
     <link rel="stylesheet" href="fontawesome5/css/all.css">
     <link rel="stylesheet" href="webfonts/stylesheet.css">
     <link rel="stylesheet" href="css/specimen_stylesheet.css">
     <link rel="stylesheet" href="css/w3.css">
     <link rel="stylesheet" href="css/w3-theme-blue-grey.css">
+    <!-- <link rel="stylesheet" href="css/w3-theme-deep-purple.css"> -->
     <link rel="stylesheet" href="css/carrito.css">
 </head>
 <style>
@@ -20,9 +22,7 @@
         padding: 6px 12px;
         animation: fadeEffect 1s;
     }
-    .marcoEstrecho{
-        padding: 4px;
-    }
+    
     .sidepanel  {
         width: 0;
         position: fixed;
@@ -36,9 +36,8 @@
         }
 
 .sidepanel a {
-    padding: 8px 8px 8px 60%;
     text-decoration: none;
-    font-size: 25px;
+    font-size: 20px;
     display: block;
     transition: 0.3s;
     }
@@ -52,7 +51,7 @@
 .dropdown-btn {
   padding: 6px 8px 6px 60%;
   text-decoration: none;
-  font-size: 25px;
+  font-size: 20px;
   color: inherit;
   display: block;
   border: none;
@@ -70,12 +69,68 @@
   background-color: green;
   color: white;
 }
-.botonTeclado{
-    background: linear-gradient(to bottom, #607d8b 0%, #303e45 100%);
+.ctalinks .fcta {
+    display: inline-block;
+    width: 244px;
+    height: 160px;
+    padding: 6px;
+    margin: 20px;
+    margin-top: 0;
+    min-width: 100px;
     color: white;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 30px;
+} 
+.ctalinks {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-.botonTeclado:hover{
-    background: linear-gradient(to bottom, #303e45 0%, #607d8b 100%);
+
+.ctalinks span {
+    margin-top: 25px;
+    margin-bottom: 5px;
+}
+
+.ctalinks a {
+    display: inline-block;
+    width: 244px;
+    height: 160px;
+    padding: 6px;
+    margin: 20px;
+    margin-top: 0;
+    min-width: 100px;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#newchip .ctalinks2 a {
+    background-color: #00a48c;
+    display: inline-block;
+    width: 204px;
+    height: 120px;
+    margin: 20px;
+    margin-top: 0;
+    min-width: 100px;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    border-radius: 5px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+#newchip .ctalinks2 a:hover {
+    opacity: 0.8;
 }
 .botonRojo{
     background: linear-gradient(to bottom, #cc0000 0%, #800000 100%);
@@ -91,32 +146,26 @@
 
 <!-- Sidebar/menu -->
 
-    <nav class="w3-sidebar w3-collapse w3-theme-l4" style="z-index:3; width: 25%" id="mySidebar"><br>
-        <div class="w3-row w3-center">
-            <div class="w3-col l8">
-                <input class="w3-input w3-border w3-round w3-margin-bottom w3-theme-l5" type="text" name="chipNumber" autofocus="autofocus" id="chipNumber" placeholder="&#128272;">
-            </div>
-            <div class="w3-col l4">
-                <button class="w3-button w3-theme w3-round" onclick="openNav()"><i class="fas fa-bars"></i> Menú</button>
-            </div>
+    <nav class="w3-sidebar w3-collapse w3-theme-l4" style="margin-left: 80%; width: 20%;" id="mySidebar"><br>
+        <div class="w3-container w3-margin-bottom">
+            <button class="w3-button w3-theme-gradient-dark w3-round w3-block w3-text-theme" onclick="openNav()"><i class="fas fa-bars"></i> Dispensar</button>
+        </div>
+        <div id="loginSocio" class="w3-container w3-margin-bottom">
+            <input class="w3-input w3-border w3-round w3-theme-l5" type="password" name="chipNumber" autofocus="autofocus" id="chipNumber" placeholder="&#128272;" onkeyup="result()">
         </div>
         <div class="w3-container">
             <div class="w3-half w3-margin-bottom">
                 <img class="w3-image" src="img/s/avatar11.png" alt="" width="100%">
             </div>
             <div class="w3-half w3-padding-tiny">
-                <h6>Nº Socio: <span id="numberSocio">&#128286;</span></h6>
-                <h6>Nombre: <span id="nameSocio">&#128274;</span></h6>
-                <h6>Credito: <span id="cashSocio">&#128275;</span></h6>
-                <h6>Notas <span id="noteSocio"></span></h6>
+                <h6 style="margin: 0">Nº Socio: <span id="numberSocio">&#128286;</span></h6>
+                <h6 style="margin: 0">Nombre: <span id="nameSocio">&#128274;</span></h6>
+                <h6 style="margin: 0">Credito: <span id="cashSocio">&#128275;</span></h6>
+                <h6 style="margin: 0" class="w3-margin-bottom">Notas <span id="noteSocio"></span></h6>
             </div>
         </div>
         
-        <div class="w3-container w3-row">
-
-        </div>
-        
-        <div class="w3-container">
+        <div class="w3-container w3-blue">
             <h2>Carrito</h2>
             <!-- Elementos del carrito -->
             <table id="carrito" class="w3-table"></table>
@@ -129,7 +178,7 @@
 
         <!-- Teclado numérico -->
 
-        <div class="w3-container w3-padding">
+        <div class="w3-container w3-padding w3-green">
             <table class="w3-auto">
                 <tr class="w3-center">
                     <td colspan="3" class="w3-padding">
@@ -137,43 +186,43 @@
                     </td>
                 </tr>
                 <tr class="w3-center">
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="7" value="7" onclick="mostra('7');" />
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="8" value="8" onclick="mostra('8');"/>
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="9" value="9" onclick="mostra('9');"/>
                     </td>
                 </tr>
                 <tr class="w3-center">
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="4" value="4" onclick="mostra('4')"/>
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="5" value="5" onclick="mostra('5');"/>
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="6" value="6" onclick="mostra('6');"/>
                     </td>
                 </tr>
                 <tr class="w3-center">
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="1" value="1" onclick="mostra('1');"/>
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button w3-text-white" id="2" value="2" onclick="mostra('2');"/>
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="3" value="3" onclick="mostra('3');"/>
                     </td>
                 </tr>
                 <tr class="w3-center">
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="," value="," onclick="mostra('.')" />
                     </td>
-                    <td class="botonTeclado w3-padding-4 w3-border">
+                    <td class="w3-theme-gradient-dark w3-padding-4 w3-border">
                         <input type="Button" class="w3-button" id="0" value="0" onclick="mostra('0');"/>
                     </td>
                     <td class="botonRojo w3-padding-4 w3-border">
@@ -186,95 +235,123 @@
 
     <!-- Overlay effect when opening sidebar on small screens -->
 
-    <div class="w3-container w3-block w3-theme-light" style="margin-left: 25%; padding: 0px">
+    <div class="w3-container w3-block w3-theme-light" style="width: 80%; padding: 0px;">
 
         <div id="mySidepanel" class="sidepanel w3-theme-l2">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
-            <button class="dropdown-btn w3-button  w3-right-align w3-border w3-theme w3-padding-16">Flores y derivados <i class="fa fa-caret-down"></i></button>
-            <div class="dropdown-container w3-theme-l3">
-                <a href="#tab01" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab01'); closeNav()">Flores</a>
-                <a href="#tab02" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab02'); closeNav()">Hash</a>
-                <a href="#tab03" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab03'); closeNav()">Extractos</a>
-            </div>
-            <button class="dropdown-btn w3-button  w3-right-align w3-border w3-theme w3-padding-16">BAR <i class="fa fa-caret-down"></i></button>
-            <div class="w3-bar dropdown-container w3-theme-l3" style="padding: 6px 8px 6px 50%">
-                <!-- <input type="button" value="S" onclick="openTabCategory(event, 'tab04'); closeNav()">
-                <input type="button" value="R" onclick="openTabCategory(event, 'tab05'); closeNav()">
-                <input type="button" value="C" onclick="openTabCategory(event, 'tab06'); closeNav()"> -->
-                <a href="#tab04" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab04'); closeNav()">Snacks</a>
-                <a href="#tab05" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab05'); closeNav()">Refrescos</a>
-                <a href="#tab06" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16" onclick="openTabCategory(event, 'tab06'); closeNav()">Café e Infusiones</a>
-            </div>
-            <a href="#tab07" class="w3-button w3-right-align w3-border w3-theme w3-padding-16 w3-margin-bottom">Parafernalia</a>
-            <a href="#">Clients</a>
-            <a href="#">Contact</a>
+            <div class="w3-content">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fas fa-times"></i></a>
+                <div class="w3-row-padding w3-center">
+                    <div class="ctalinks w3-col l4 m4 s4"><a href="#" class="w3-theme-l1 w3-theme-gradient-dark"><span>DISPENSAR</span></a></div>
+                    <div class="ctalinks w3-col l4 m4 s4"><a href="#" class="w3-theme-l1 w3-theme-gradient-dark"><span>MENÚ</span></a></div>
+                    <div class="ctalinks w3-col l4 m4 s4"><a href="#" class="w3-theme-l1 w3-theme-gradient-dark"><span>BAR</span></a></div>
+                    <div class="ctalinks w3-col l4 m4 s4"><a href="#" class="w3-theme-l1 w3-theme-gradient-dark"><span>PERFIL</span></a></div>
+                    <div class="ctalinks w3-col l4 m4 s4"><a href="#" class="w3-theme-l1 w3-theme-gradient-dark"><span>SOCIOS</span></a></div>
+                    <div class="ctalinks w3-col l4 m4 s4"><a href="#" class="w3-theme-l1 w3-theme-gradient-dark"><span>SOCIO NUEVO</span></a></div>
+                </div>
+                <div class="w3-container">
+                    <button class="dropdown-btn w3-button  w3-right-align w3-border w3-theme w3-padding-16"
+                        onclick="drop('dropWeed')">Flores y derivados <i class="fa fa-caret-down"></i></button>
+                    <div id="dropWeed" class="dropdown-container w3-theme-l3">
+                        <a href="#tab01" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16"
+                            onclick="openTabCategory(event, 'tab01'); closeNav();drop('dropWeed')">Flores</a>
+                        <a href="#tab02" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16"
+                            onclick="openTabCategory(event, 'tab02'); closeNav();drop('dropWeed')">Hash</a>
+                        <a href="#tab03" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16"
+                            onclick="openTabCategory(event, 'tab03'); closeNav();drop('dropWeed')">Extractos</a>
+                    </div>
+                    <button class="dropdown-btn w3-button  w3-right-align w3-border w3-theme w3-padding-16" onclick="drop('dropBar')">BAR <i
+                            class="fa fa-caret-down"></i></button>
+                    <div id="dropBar" class="dropdown-container w3-theme-l3">
+                        <a href="#tab04" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16"
+                            onclick="openTabCategory(event, 'tab04'); closeNav();drop('dropBar')">Snacks</a>
+                        <a href="#tab05" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16"
+                            onclick="openTabCategory(event, 'tab05'); closeNav();drop('dropBar')">Refrescos</a>
+                        <a href="#tab06" class="w3-button  w3-right-align w3-border w3-theme-dark w3-padding-16"
+                            onclick="openTabCategory(event, 'tab06'); closeNav();drop('dropBar')">Café e Infusiones</a>
+                    </div>
+                    <a href="#tab07" class="w3-button w3-right-align w3-border w3-theme w3-padding-16 w3-margin-bottom">Parafernalia</a>
+                    <a href="#">Clients</a>
+                    <a href="#">Contact</a>
+                </div>
+            
+            
         </div>
         
         <!-- <button class="w3-button w3-theme" onclick="openNav()" style="position: fixed; top: 0;left: 25%;">☰</button> -->
 
+        </div>
     </div>
 
-    <div class="w3-container" style="margin-left: 25%; padding: 0px">
+    <div class="w3-container" style="width: 75%; padding: 0px">
 
         <!-- TAB 1 -->
         
         <div id="tab01" class="tabcontent">
-            <div id="items" class="w3-row-padding">
-            </div>
+            <div id="tab1" class="w3-row-padding"></div>
         </div>
 
         <!-- TAB 2 -->
 
         <div id="tab02" class="tabcontent">
-           
+            <div id="tab2" class="w3-row-padding"></div>
         </div>
 
         <!-- TAB 3 -->
 
         <div id="tab03" class="tabcontent">
-            <div id="items3" class="w3-row-padding"></div>
+            <div id="tab3" class="w3-row-padding"></div>
         </div>
         
         <!-- TAB 4 -->
         
         <div id="tab04" class="tabcontent">
-            <div id="items4" class="w3-row-padding"></div>
+            <div id="tab4" class="w3-row-padding"></div>
         </div>
 
         <!-- TAB 5 -->
         
         <div id="tab05" class="tabcontent">
-            <div id="items5" class="w3-row-padding"></div>
+            <div id="tab5" class="w3-row-padding"></div>
+        </div>
+
+        <!-- TAB 6 -->
+        
+        <div id="tab06" class="tabcontent">
+            <div id="tab6" class="w3-row-padding"></div>
+        </div>
+
+        <!-- TAB 7 -->
+        
+        <div id="tab07" class="tabcontent">
+            <div id="tab7" class="w3-row-padding"></div>
         </div>
     </div>
     <script src="admin/js/products.js"></script>
     <script src="js/carrito.js"></script>
-    
-    <!-- <script src="js/flowers.js"></script> -->
-    <script src="admin/js/products.js"></script>
+    <script src="admin/js/scripts.js"></script>
 
     <script>
        function openNav() {
-            document.getElementById("mySidepanel").style.width = "50%";
+            document.getElementById("mySidepanel").style.width = "80%";
         }
 
         function closeNav() {
             document.getElementById("mySidepanel").style.width = "0";
         }
         
-        var dropdown = document.getElementsByClassName("dropdown-btn");
-        var i;
-        for (i = 0; i < dropdown.length; i++) {
-            dropdown[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var dropdownContent = this.nextElementSibling;
-                if (dropdownContent.style.display === "block") {
-                    dropdownContent.style.display = "none";
-                } else {
-                    dropdownContent.style.display = "block";
-                }
-            });
-        } 
+        // var dropdown = document.getElementsByClassName("dropdown-btn");
+        // var i;
+        // for (i = 0; i < dropdown.length; i++) {
+        //     dropdown[i].addEventListener("click", function() {
+        //         this.classList.toggle("active");
+        //         var dropdownContent = this.nextElementSibling;
+        //         if (dropdownContent.style.display === "block") {
+        //             dropdownContent.style.display = "none";
+        //         } else {
+        //             dropdownContent.style.display = "block";
+        //         }
+        //     });
+        // } 
 
         function openTabCategory(evt, tabId) {
             var i, tabcontent, tablinks;
@@ -289,7 +366,6 @@
             document.getElementById(tabId).style.display = "block";
             evt.currentTarget.className += " w3-opacity";
         }
-        console.log("hola");
     </script>
 </body>
 

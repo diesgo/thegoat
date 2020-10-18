@@ -1,15 +1,3 @@
-function drop(id) {
-    var x = document.getElementById(id);
-    console.log(x);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.classList.add("w3-show");
-        x.classList.add("w3-animate-opacity");
-    } else {
-        x.classList.remove("w3-show");
-        x.classList.remove("w3-animate-opacity");
-    }
-}
-
 // Función para seleccionar el rol con el que se entra a la aplicación
 
 function place() {
@@ -24,46 +12,6 @@ function place() {
         case 2:
            location.replace("home.html");
             break;
-    }
-}
-
-function openCity(evt, cityName) {
-    var i, x, tablinks;
-    x = document.getElementsByClassName("city");
-    for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < x.length; i++) {
-        tablinks[i].classList.remove("w3-theme-light");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.classList.add("w3-theme-l4");
-}
-
-function openTab(evt, tabNumber) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" w3-theme-d3", "");
-    }
-    document.getElementById(tabNumber).style.display = "block";
-    evt.currentTarget.className += " w3-theme-d3";
-}
-
-function dropdown(id) {
-    var x = document.getElementById(id);
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-        x.previousElementSibling.className += " w3-green";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-        x.previousElementSibling.className =
-            x.previousElementSibling.className.replace(" w3-green", "");
     }
 }
 
