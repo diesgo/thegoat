@@ -18,7 +18,6 @@ function w3_close() {
 }
 function drop(id) {
     var x = document.getElementById(id);
-    console.log(x);
     if (x.className.indexOf("w3-show") == -1) {
         x.classList.add("w3-show");
         x.classList.add("w3-animate-opacity");
